@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>David Arena – CV</title>
+<style>
+  :root {
+    --navy: #1a2332;
+    --teal: #2a9d8f;
+    --teal-light: #e8f5f3;
+    --gray-50: #f8f9fa;
+    --gray-100: #e9ecef;
+    --gray-400: #adb5bd;
+    --gray-600: #6c757d;
+    --gray-800: #343a40;
+    --text: #2d3436;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    font-size: 12.5px;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: var(--text);
+    line-height: 1.5;
+    background: var(--gray-50);
+  }
+
+  .page {
+    max-width: 210mm;
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 0 1px 10px rgba(0,0,0,.08);
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--navy);
+    color: #fff;
+    padding: 24px 36px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: .5px;
+    margin-bottom: 4px;
+  }
+
+  .subtitle {
+    color: var(--teal);
+    font-size: .95rem;
+    font-weight: 500;
+  }
+
+  .contact {
+    text-align: right;
+    font-size: .8rem;
+    line-height: 1.8;
+    white-space: nowrap;
+    color: var(--gray-400);
+  }
+
+  .contact a { color: var(--gray-400); text-decoration: none; }
+
+  /* ── BODY ── */
+  .body { padding: 22px 36px 16px; }
+
+  /* Summary */
+  .summary {
+    border-left: 3px solid var(--teal);
+    padding-left: 16px;
+    margin-bottom: 18px;
+    color: var(--gray-600);
+    font-size: .86rem;
+    line-height: 1.6;
+  }
+
+  /* Section titles */
+  h2 {
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--navy);
+    border-bottom: 2px solid var(--teal);
+    padding-bottom: 4px;
+    margin-bottom: 12px;
+    margin-top: 18px;
+  }
+
+  h2:first-child { margin-top: 0; }
+
+  /* Pills */
+  .pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
+
+  .pill {
+    background: var(--teal-light);
+    color: var(--navy);
+    font-size: .75rem;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 12px;
+  }
+
+  .pill--tech {
+    background: var(--navy);
+    color: #fff;
+  }
+
+  /* Timeline */
+  .role { margin-bottom: 14px; position: relative; padding-left: 14px; border-left: 2px solid var(--gray-100); }
+
+  .role-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 4px; }
+
+  .role-title {
+    font-size: .92rem;
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  .role-title span { color: var(--teal); font-weight: 600; }
+
+  .role-date {
+    font-size: .75rem;
+    color: var(--gray-600);
+    white-space: nowrap;
+  }
+
+  .role-loc {
+    font-size: .78rem;
+    color: var(--gray-600);
+    margin-bottom: 3px;
+  }
+
+  .role ul {
+    margin: 5px 0 5px 16px;
+    font-size: .82rem;
+    color: var(--gray-800);
+  }
+
+  .role li { margin-bottom: 3px; }
+
+  .role .tech-used {
+    font-size: .75rem;
+    color: var(--gray-600);
+    margin-top: 5px;
+  }
+
+  /* Additional experience */
+  .additional { font-size: .82rem; color: var(--gray-800); }
+  .role { page-break-inside: avoid; }
+  .additional li { margin-bottom: 3px; list-style: none; padding-left: 12px; position: relative; }
+  .additional li::before { content: '–'; position: absolute; left: 0; color: var(--teal); font-weight: 700; }
+  .additional strong { color: var(--navy); }
+
+  /* Education */
+  .edu { font-size: .88rem; }
+  .edu-degree { font-weight: 700; color: var(--navy); }
+  .edu-school { color: var(--gray-600); }
+
+  /* Two-col layout for competencies */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 30px;
+    margin-bottom: 10px;
+  }
+
+  /* ── PRINT ── */
+  @media print {
+    html { font-size: 12.5px; }
+    body { background: none; }
+    .page { box-shadow: none; max-width: none; }
+    header { padding: 24px 32px 20px; }
+    .body { padding: 20px 32px 16px; }
+    h2 { margin-top: 16px; }
+    .role { margin-bottom: 10px; }
+    .summary { margin-bottom: 16px; }
+  }
+
+  @page {
+    size: A4;
+    margin: 5mm 0;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div>
+      <h1>David Andrew Arena</h1>
+      <div class="subtitle">Technology Advisor · Platform Engineering · Change &amp; Transformation</div>
+    </div>
+    <div class="contact">
+      <a href="mailto:david.andrew.arena@gmail.com">david.andrew.arena@gmail.com</a><br>
+      (+49) 176 7033 6155<br>
+      Spain
+    </div>
+  </header>
+
+  <div class="body">
+    <p class="summary">Diligent and thorough technology leader with more than 25 years of experience across a variety of roles and industries. Proven track record operating as a contractor and business owner managing up to four concurrent projects, demonstrating strong prioritisation and the ability to hit multiple deadlines. Innately analytical with robust relationship-building skills, ensuring I remain at the cutting edge of the industry. As a leader I build capability within teams and establish successful strategies to improve effectiveness. Currently seeking a fresh challenge to continue my professional development and contribute to a high-performance team.</p>
+
+    <div class="two-col">
+      <div>
+        <h2>Core Competencies</h2>
+        <div class="pills">
+          <span class="pill">Tech Advisory</span>
+          <span class="pill">Budgeting</span>
+          <span class="pill">Coaching</span>
+          <span class="pill">DevOps Consulting</span>
+          <span class="pill">CI/CD</span>
+          <span class="pill">Platform Engineering</span>
+          <span class="pill">Developer Experience</span>
+        </div>
+      </div>
+      <div>
+        <h2>Technical Skills</h2>
+        <div class="pills">
+          <span class="pill pill--tech">Kubernetes</span>
+          <span class="pill pill--tech">Terraform</span>
+          <span class="pill pill--tech">AWS</span>
+          <span class="pill pill--tech">GCP</span>
+          <span class="pill pill--tech">Node.js</span>
+          <span class="pill pill--tech">Golang</span>
+          <span class="pill pill--tech">Python</span>
+          <span class="pill pill--tech">Web3</span>
+          <span class="pill pill--tech">GoCD</span>
+        </div>
+      </div>
+    </div>
+
+    <h2>Professional Experience</h2>
+
+    <div class="role">
+      <div class="role-header">
+        <div class="role-title">Contractor – <span>Virtual Minds</span></div>
+        <div class="role-date">Jul 2024 – Present</div>
+      </div>
+      <div class="role-loc">Freiburg, Germany · via Arena Capital</div>
+      <ul>
+        <li>Modernisation of adtech platforms across Cloud (AWS &amp; OpenStack), driving infrastructure transformation</li>
+        <li>Team structuring, development, and coaching — building high-performing engineering culture</li>
+        <li>Leading authentication &amp; CI/CD initiatives to restructure 4 business lines aligned with P7 guidelines</li>
+        <li>Building standards and processes for governance and reporting across the organisation</li>
+        <li>Developing 360° and developer performance review frameworks for 200+ engineers</li>
+        <li>Driving AI adoption in coding assistance and agentic workflows</li>
+        <li>Report directly to C-Level executives, translating business objectives into actionable goals through OKRs</li>
+      </ul>
+      <div class="tech-used">EKS · OpenStack · GoCD · Terraform · Prometheus · AI/LLM Tooling</div>
+    </div>
+
+    <div class="role">
+      <div class="role-header">
+        <div class="role-title">Tech Due Diligence Advisor – <span>Arena Capital</span></div>
+        <div class="role-date">Jul 2017 – Present</div>
+      </div>
+      <ul>
+        <li>Board-level input and support for mergers and acquisitions</li>
+        <li>Clients include ProSieben, Zalando, Payoneer, German Accelerator Programme, LMU, PE/Family funds</li>
+      </ul>
+    </div>
+
+    <div class="role">
+      <div class="role-header">
+        <div class="role-title">Contractor – <span>MRGE</span></div>
+        <div class="role-date">Nov 2022 – Sep 2023</div>
+      </div>
+      <div class="role-loc">Hamburg, Germany · via Arena Capital</div>
+      <ul>
+        <li>Spearheaded the platform engineering team focusing on the successful cloud migration of shopping24, ensuring a seamless transition to a scalable, cloud-based infrastructure</li>
+        <li>Orchestrated the build of robust infrastructure, laying the foundation for scalability and performance</li>
+        <li>Report directly to C-Level executives, translating business objectives into actionable goals through OKRs</li>
+        <li>Employed FinOps principles within resource management strategies, reducing infrastructure expenditure by €1M annually</li>
+      </ul>
+      <div class="tech-used">EKS · GoCD · Terraform · Prometheus</div>
+    </div>
+
+    <div class="role">
+      <div class="role-header">
+        <div class="role-title">Chief Technical Officer – <span>Valsea</span></div>
+        <div class="role-date">Aug 2021 – Jun 2023</div>
+      </div>
+      <div class="role-loc">Marbella, Spain</div>
+      <ul>
+        <li>Pioneered the development of a cutting-edge native cryptocurrency iGaming platform, positioning the company at the forefront of the digital gaming industry</li>
+        <li>Directed the transformation of the existing system into a high-performance, low-latency global platform to deliver a superior user experience across international markets</li>
+        <li>Led the organisation through the rigorous process of obtaining B2B and B2C ISO 27001 certification</li>
+        <li>Doubled the technical and product teams' size through a comprehensive talent acquisition strategy, enhancing innovation capacity</li>
+        <li>Managed a diverse team of 50 FTEs across engineering and product departments, fostering a culture of excellence and collaboration</li>
+      </ul>
+    </div>
+
+    <div class="role">
+      <div class="role-header">
+        <div class="role-title">Contractor – <span>Chance</span></div>
+        <div class="role-date">Jan 2020 – Oct 2021</div>
+      </div>
+      <div class="role-loc">Paris, France · via Arena Capital</div>
+      <ul>
+        <li>Scaled existing systems to Kubernetes, overseeing a complex change programme and gaining buy-in from stakeholders</li>
+        <li>Coached teams in DevOps practices, building capability and a culture of continuous improvement</li>
+      </ul>
+      <div class="tech-used">Node.js · Python · Terraform · EKS</div>
+    </div>
+
+    <div class="role">
+      <div class="role-header">
+        <div class="role-title">Contractor – <span>OMR</span></div>
+        <div class="role-date">Jul 2019 – Aug 2021</div>
+      </div>
+      <div class="role-loc">Hamburg, Germany · via Arena Capital</div>
+      <ul>
+        <li>Grew platform to scale to 70k participants</li>
+        <li>Scaled and migrated Kubernetes clusters, making data-driven decisions ensuring rapid yet sustainable growth</li>
+      </ul>
+      <div class="tech-used">GKE · Terraform · Helm · GitHub Actions</div>
+    </div>
+
+    <div class="role">
+      <div class="role-header">
+        <div class="role-title">Managing Director – <span>Arena Capital</span></div>
+        <div class="role-date">Feb 2021 – Present</div>
+      </div>
+      <div class="role-loc">Swieqi, Malta</div>
+      <ul>
+        <li>Providing tech advisory services and technical due diligence</li>
+      </ul>
+    </div>
+
+    <div class="role">
+      <div class="role-header">
+        <div class="role-title">Contractor – <span>Tier Mobility</span></div>
+        <div class="role-date">Nov 2018 – Dec 2019</div>
+      </div>
+      <div class="role-loc">Berlin, Germany · via Arena Networks</div>
+      <ul>
+        <li>Migrated from serverless to Kubernetes, ensuring a smooth transition with problems solved live</li>
+        <li>Built infrastructure and CI/CD from the ground up</li>
+        <li>Guided and mentored existing team members through to production</li>
+      </ul>
+      <div class="tech-used">EKS · GKE · Istio · Helm · Terraform · Node.js · Golang</div>
+    </div>
+
+    <div class="role">
+      <div class="role-header">
+        <div class="role-title">Contractor – <span>Payoneer</span></div>
+        <div class="role-date">Jan 2016 – Present</div>
+      </div>
+      <div class="role-loc">Munich, Germany</div>
+      <ul>
+        <li>Advise and consult across all tech issues, engaging with senior leadership on strategic direction</li>
+        <li>Coaching DevOps practices and CI/CD automation, boosting talent capability and driving growth</li>
+      </ul>
+      <div class="tech-used">GKE · Terraform · Golang · Python · Node.js · GoCD</div>
+    </div>
+
+    <div class="role">
+      <div class="role-header">
+        <div class="role-title">Managing Director – <span>Arena Networks</span></div>
+        <div class="role-date">Mar 2016 – Dec 2021</div>
+      </div>
+      <div class="role-loc">Munich, Germany</div>
+      <ul>
+        <li>Provided thorough tech advisory services and technical due diligence</li>
+      </ul>
+    </div>
+
+    <div class="role">
+      <div class="role-header">
+        <div class="role-title">Contractor – <span>enfore</span></div>
+        <div class="role-date">Nov 2020 – Aug 2021</div>
+      </div>
+      <div class="role-loc">Hamburg, Germany · via Arena Networks</div>
+      <ul>
+        <li>Senior technical consultant advising on cloud architecture and DevOps strategy</li>
+      </ul>
+    </div>
+
+    <div class="role">
+      <div class="role-header">
+        <div class="role-title">Contractor – <span>Zuper GmbH</span></div>
+        <div class="role-date">Nov 2016 – Dec 2018</div>
+      </div>
+      <div class="role-loc">Germany · via Arena Networks</div>
+      <ul>
+        <li>DevOps tech lead, building and managing cloud infrastructure and CI/CD pipelines</li>
+      </ul>
+    </div>
+
+    <div class="role">
+      <div class="role-header">
+        <div class="role-title">Founder &amp; Head of Operations – <span>LaterPay</span></div>
+        <div class="role-date">Nov 2010 – Jan 2016</div>
+      </div>
+      <div class="role-loc">Munich, Germany</div>
+      <ul>
+        <li>Built operations team and automated on-prem infrastructure</li>
+        <li>Designed and implemented software development practices</li>
+        <li>Led implementation of a fully PCI DSS certified environment</li>
+        <li>Ensured 24/7 operations achieving 99.99% uptime</li>
+        <li>Developed an effective remote working culture process</li>
+      </ul>
+    </div>
+
+    <div class="role">
+      <div class="role-header">
+        <div class="role-title">Head of IT – <span>Booming GmbH</span></div>
+        <div class="role-date">Aug 2008 – Sep 2010</div>
+      </div>
+      <div class="role-loc">Germany</div>
+      <ul>
+        <li>Led all IT operations and infrastructure management</li>
+      </ul>
+    </div>
+
+    <h2>Additional Experience</h2>
+    <ul class="additional">
+      <li><strong>SaaSgroup</strong> (2020 – 2022) — SRE Lead across the group's portfolio of SaaS products</li>
+      <li><strong>OMMAX</strong> (2020 – 2021) — Technical due diligence across 7 large M&amp;A projects</li>
+      <li><strong>BullBear Analytics</strong> (2019 – 2020) — Technical analysis automation for cryptocurrency markets</li>
+      <li><strong>Neuro Flash</strong> (2018) — Built AI/ML-driven cryptocurrency trading platform with neural network pattern recognition</li>
+      <li><strong>Forto</strong> (2018) — DevOps consulting for logistics tech scale-up</li>
+      <li><strong>SmashDocs</strong> (2016 – 2017) — Tech consultant for Smartwork Solutions</li>
+    </ul>
+
+    <h2>Languages</h2>
+    <div class="pills">
+      <span class="pill">English (Native)</span>
+      <span class="pill">German (Limited Working)</span>
+      <span class="pill">Italian (Elementary)</span>
+    </div>
+
+    <h2>Education</h2>
+    <div class="edu">
+      <span class="edu-degree">Bachelor of Information Technology and Communication</span><br>
+      <span class="edu-school">University of Wollongong</span>
+    </div>
+  </div>
+</div>
+</body>
+</html>
